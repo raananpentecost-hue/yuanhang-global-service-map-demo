@@ -39,6 +39,19 @@
     .tile-c img{content:url('assets/market-intelligence-v2.png')}
     @media(max-width:900px){.pillar-visual{min-height:220px}}
   </style>
+  <style>
+    /* Compact partner cards: less empty space, stronger visual rhythm. */
+    .cards{align-items:stretch}
+    .provider{min-height:204px;padding:18px 20px;position:relative;overflow:hidden;background:linear-gradient(135deg,#fff 0%,#fff 72%,#f2f5f2 100%)}
+    .provider:after{content:"";position:absolute;right:-26px;top:-38px;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle at 35% 65%,rgba(242,105,69,.23),rgba(242,105,69,0) 68%);pointer-events:none}
+    .p-top{align-items:flex-start;position:relative;z-index:1}
+    .logo{width:48px;height:48px;font-size:18px;letter-spacing:-.06em}
+    .provider h3{font-size:22px;margin:20px 0 0;line-height:1.1;position:relative;z-index:1}
+    .verified{font-size:10px;padding:5px 9px}
+    .p-foot{margin-top:20px;padding-top:12px;position:relative;z-index:1}
+    .p-foot button{font-size:12px}
+    @media(max-width:900px){.provider{min-height:190px}}
+  </style>
 </head>
 <body>
   <nav class="nav"><div class="shell nav-in"><a class="brand" href="#top"><span class="mark"></span>远航图谱 <small style="font:700 9px ui-monospace;color:#8b939d">GLOBAL COMMERCE</small></a><div class="nav-links"><a href="#solutions">解决方案</a><a href="#cases">成功路径</a><a href="#providers">服务生态</a><a href="#diagnose">需求诊断</a></div><div class="nav-actions"><button class="btn" onclick="notify('正式版将开放服务商入驻')">合作伙伴</button><button class="btn btn-orange" onclick="document.querySelector('#diagnose').scrollIntoView()">开始诊断</button></div></div></nav>
