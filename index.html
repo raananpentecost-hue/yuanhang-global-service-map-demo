@@ -57,10 +57,8 @@
     @media(max-width:900px){.action-grid,.report-grid{grid-template-columns:1fr}.action-card{min-height:150px}}
   </style>
   <style>
-    .tile img,.tile video,.case-img img,.pillar-visual{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease}
-    .tile:hover img,.tile:hover video,.case:hover .case-img img,.pillar:hover .pillar-visual{transform:scale(1.07)}
-    .tile video{width:100%;height:100%;display:block;object-fit:cover}
-    .video-badge{position:absolute;left:18px;top:16px;z-index:4;background:rgba(7,17,31,.82);color:#fff;border-radius:999px;padding:7px 10px;font-size:10px;letter-spacing:.08em;font-weight:900}
+    .tile img,.case-img img,.pillar-visual{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease}
+    .tile:hover img,.case:hover .case-img img,.pillar:hover .pillar-visual{transform:scale(1.07)}
   </style>
 </head>
 <body>
@@ -95,14 +93,6 @@
       }
     })();
     function requestReportDownload(){const phone=document.getElementById('reportPhone').value.trim();const email=document.getElementById('reportEmail').value.trim();const note=document.getElementById('reportNote');if(!phone||!email){note.textContent='请先填写联系电话和工作邮箱，才能申请下载。';note.style.color='var(--orange)';return}note.textContent='信息已记录。正式版将在验证后开放报告下载。';note.style.color='#268a63';notify('下载申请已提交')}
-    (function(){
-      const tile=document.querySelector('.tile-b');
-      if(!tile)return;
-      tile.innerHTML='<video class="market-video" muted loop playsinline preload="metadata" poster="assets/market-entry-v2.png"><source src="assets/market-story.mp4" type="video/mp4"></video><span class="video-badge">AUTO PLAY · MARKET STORY</span>';
-      const video=tile.querySelector('video');
-      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){video.play().catch(()=>{})}else{video.pause()}}),{threshold:.35});
-      observer.observe(tile);
-    })();
   </script>
 </body>
 </html>
