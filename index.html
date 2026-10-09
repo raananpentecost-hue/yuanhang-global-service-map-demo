@@ -21,6 +21,10 @@
     @media(max-width:560px){.shell{padding:0 18px}.nav-actions .btn:first-child{display:none}.hero{padding-top:48px}.hero h1{font-size:52px}.mosaic{height:410px}.tile-a{top:55px;width:58%;height:270px}.tile-b{height:170px}.tile-c{height:225px}.tile-d{height:135px;padding:15px}.tile-d b{font-size:36px}.orb{right:30%;width:58px;height:58px}.hero-actions{align-items:flex-start;flex-direction:column}.hero-actions .btn{width:100%}.options{grid-template-columns:1fr}.diag{padding:22px}.footer-in{flex-direction:column}}
   </style>
   <style>
+    .editorial-collage.full-images{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;grid-auto-flow:dense;gap:8px;background:#e8ece9}.full-images .editorial-tile{grid-column:auto!important;grid-row:auto!important;margin:0!important;min-height:0}.full-images .editorial-tile:nth-child(1){grid-column:span 2!important;grid-row:span 2!important}.full-images .editorial-tile:nth-child(2){grid-column:span 2!important}.full-images .editorial-tile:nth-child(5){grid-row:span 2!important}.full-images .editorial-tile:nth-child(7){grid-column:span 2!important}.full-images .editorial-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .65s ease}.full-images .editorial-tile:hover img{transform:scale(1.06);filter:saturate(1.08)}
+    @media(max-width:900px){.editorial-collage.full-images{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}.full-images .editorial-tile:nth-child(1),.full-images .editorial-tile:nth-child(2),.full-images .editorial-tile:nth-child(7){grid-column:span 2!important}}
+  </style>
+  <style>
     /* Visual-first pass: image-led cards, shorter supporting copy. */
     .pillar-visual{background-size:cover!important;background-position:center!important;min-height:250px}
     .pillar-visual svg{display:none}
@@ -78,6 +82,12 @@
   </style>
   <style>.tile-b img{content:url('https://commons.wikimedia.org/wiki/Special:FilePath/TG%20trailer.JPG?width=1200')}</style>
   <style>.visual-wall{grid-auto-flow:dense}</style>
+  <style>
+    .diag{border-radius:46px;overflow:hidden;box-shadow:0 24px 70px rgba(7,17,31,.18)}
+    .diag-card{border-radius:30px;box-shadow:0 16px 38px rgba(7,17,31,.16)}
+    .diag-next{border-radius:999px}.option{border-radius:16px}.progress i{border-radius:999px}
+    @media(max-width:900px){.diag{border-radius:30px}.diag-card{border-radius:22px}}
+  </style>
 </head>
 <body>
   <nav class="nav"><div class="shell nav-in"><a class="brand" href="#top"><span class="mark"></span>远航图谱 <small style="font:700 9px ui-monospace;color:#8b939d">GLOBAL COMMERCE</small></a><div class="nav-links"><a href="#solutions">解决方案</a><a href="#cases">成功路径</a><a href="#providers">服务生态</a><a href="#diagnose">需求诊断</a></div><div class="nav-actions"><button class="btn" onclick="notify('正式版将开放服务商入驻')">合作伙伴</button><button class="btn btn-orange" onclick="document.querySelector('#diagnose').scrollIntoView()">开始诊断</button></div></div></nav>
@@ -139,6 +149,9 @@
     })();
     (function(){
       const footer=document.querySelector('.footer');if(!footer)return;footer.className='site-footer';footer.innerHTML='<div class="shell"><div class="footer-grid"><div class="footer-col"><div class="footer-brand">远航图谱</div><p>为中国货代与出海企业连接真实市场、真实线路与真实服务伙伴。</p></div><div class="footer-col"><h4>平台</h4><a href="#providers">服务搜索</a><a href="#actions">服务商入驻</a><a href="#diagnose">需求诊断</a></div><div class="footer-col"><h4>资源</h4><a href="#reports">报告中心</a><a href="#cases">货运案例</a><a href="#journey">交付路径</a></div><div class="footer-col"><h4>联系</h4><a href="#reports">提交报告</a><a href="mailto:hello@yuanhang-global.com">商务合作</a><a href="#top">返回顶部 ↑</a></div></div><div class="footer-bottom"><span>© 2026 远航图谱 · Global Freight Intelligence</span><span>图片来源：Wikimedia Commons · CC 授权素材</span></div></div>';
+    })();
+    (function(){
+      const cases=document.querySelector('#cases .cases');if(!cases)return;const imgs=['Container crane at the Oakland Seaport.jpg','Cranes at Oakland\'s container terminal.jpg','Container ship sunshine spirit.jpg','Container crane and electricity pylon.jpg','Container cranes at Walvis Bay port 24.jpg','Container cranes in Tokyo Bay.jpg','Container on barge harbor crane.png','Genova terminal kontenerowy 3.jpg','Porte-conteneurs Maersk Congo Tanger med.jpg','TG trailer.JPG'];const src=n=>'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(n)+'?width=1400';cases.className='editorial-collage full-images';cases.innerHTML=imgs.map((n,i)=>'<div class="editorial-tile"><img src="'+src(n)+'" alt="真实货运场景 '+(i+1)+'" loading="lazy"></div>').join('');
     })();
   </script>
 </body>
