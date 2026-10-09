@@ -20,6 +20,25 @@
     @media(max-width:900px){.nav-links{display:none}.hero-grid,.diag{grid-template-columns:1fr}.mosaic{height:480px}.proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item:nth-child(2){border-right:0}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}.pillar-grid,.cases{grid-template-columns:1fr}.journey{grid-template-columns:1fr}.stage{border-right:0;border-bottom:1px solid var(--line);min-height:auto}.stage:last-child{border-bottom:0}.catalog-grid{grid-template-columns:1fr}.filters{display:flex;overflow:auto;gap:5px}.filters h3{display:none}.filter-btn{min-width:max-content;width:auto}.cards{grid-template-columns:1fr}.section{padding:70px 0}.section-top{align-items:flex-start;flex-direction:column}.diag{padding:30px}.diag h2{font-size:48px}}
     @media(max-width:560px){.shell{padding:0 18px}.nav-actions .btn:first-child{display:none}.hero{padding-top:48px}.hero h1{font-size:52px}.mosaic{height:410px}.tile-a{top:55px;width:58%;height:270px}.tile-b{height:170px}.tile-c{height:225px}.tile-d{height:135px;padding:15px}.tile-d b{font-size:36px}.orb{right:30%;width:58px;height:58px}.hero-actions{align-items:flex-start;flex-direction:column}.hero-actions .btn{width:100%}.options{grid-template-columns:1fr}.diag{padding:22px}.footer-in{flex-direction:column}}
   </style>
+  <style>
+    /* Visual-first pass: image-led cards, shorter supporting copy. */
+    .pillar-visual{background-size:cover!important;background-position:center!important;min-height:250px}
+    .pillar-visual svg{display:none}
+    .pillar:nth-child(1) .pillar-visual{background-image:linear-gradient(180deg,rgba(7,17,31,.05),rgba(7,17,31,.3)),url('assets/market-entry-v2.png')}
+    .pillar:nth-child(2) .pillar-visual{background-image:linear-gradient(180deg,rgba(7,17,31,.05),rgba(7,17,31,.3)),url('assets/market-intelligence-v2.png')}
+    .pillar:nth-child(3) .pillar-visual{background-image:linear-gradient(180deg,rgba(7,17,31,.05),rgba(7,17,31,.3)),url('assets/global-operations-v2.png')}
+    .case:nth-child(1) .case-img{background-image:url('assets/market-entry-v2.png');background-size:cover;background-position:center}
+    .case:nth-child(2) .case-img{background-image:url('assets/global-operations-v2.png');background-size:cover;background-position:center}
+    .case:nth-child(3) .case-img{background-image:url('assets/market-intelligence-v2.png');background-size:cover;background-position:center}
+    .case-img img{opacity:0}
+    .hero p,.section-intro,.pillar p,.case-copy p,.stage p{display:none}
+    .pillar h3{margin-top:18px}
+    .case-copy{padding-top:18px}
+    .case-copy h3{margin-top:10px}
+    .provider p,.provider .tags{display:none}
+    .tile-c img{content:url('assets/market-intelligence-v2.png')}
+    @media(max-width:900px){.pillar-visual{min-height:220px}}
+  </style>
 </head>
 <body>
   <nav class="nav"><div class="shell nav-in"><a class="brand" href="#top"><span class="mark"></span>远航图谱 <small style="font:700 9px ui-monospace;color:#8b939d">GLOBAL COMMERCE</small></a><div class="nav-links"><a href="#solutions">解决方案</a><a href="#cases">成功路径</a><a href="#providers">服务生态</a><a href="#diagnose">需求诊断</a></div><div class="nav-actions"><button class="btn" onclick="notify('正式版将开放服务商入驻')">合作伙伴</button><button class="btn btn-orange" onclick="document.querySelector('#diagnose').scrollIntoView()">开始诊断</button></div></div></nav>
