@@ -57,6 +57,11 @@
     @media(max-width:900px){.action-grid,.report-grid{grid-template-columns:1fr}.action-card{min-height:150px}}
   </style>
   <style>
+    .trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff;overflow:hidden}.trust-top{display:flex;align-items:center;gap:28px;padding:20px 0 13px}.trust-top strong{font-size:13px;white-space:nowrap}.trust-top span{font-size:11px;color:#89919b}.signal-track{display:flex;width:max-content;animation:signalMove 28s linear infinite}.signal-item{display:flex;align-items:baseline;gap:7px;padding:18px 34px 22px;border-right:1px solid var(--line);white-space:nowrap}.signal-item b{font-size:30px;letter-spacing:-.06em;color:var(--orange)}.signal-item span{font-size:11px;font-weight:800;letter-spacing:.08em;color:#66717c}@keyframes signalMove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .cases{grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(160px,auto);align-items:start}.case:nth-child(1){grid-column:span 2;grid-row:span 2}.case:nth-child(2){grid-column:span 2;margin-top:44px}.case:nth-child(3){grid-column:span 2;margin-top:0}.case:nth-child(1) .case-img{height:330px}.case:nth-child(2) .case-img,.case:nth-child(3) .case-img{height:210px}.case:nth-child(1) .case-copy h3{font-size:31px}.case:nth-child(2) .case-copy h3,.case:nth-child(3) .case-copy h3{font-size:23px}
+    @media(max-width:900px){.cases{grid-template-columns:1fr}.case:nth-child(1),.case:nth-child(2),.case:nth-child(3){grid-column:auto;grid-row:auto;margin-top:0}.case:nth-child(1) .case-img,.case:nth-child(2) .case-img,.case:nth-child(3) .case-img{height:250px}}
+  </style>
+  <style>
     .tile img,.case-img img,.pillar-visual{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease}
     .tile:hover img,.case:hover .case-img img,.pillar:hover .pillar-visual{transform:scale(1.07)}
   </style>
@@ -93,6 +98,12 @@
       }
     })();
     function requestReportDownload(){const phone=document.getElementById('reportPhone').value.trim();const email=document.getElementById('reportEmail').value.trim();const note=document.getElementById('reportNote');if(!phone||!email){note.textContent='请先填写联系电话和工作邮箱，才能申请下载。';note.style.color='var(--orange)';return}note.textContent='信息已记录。正式版将在验证后开放报告下载。';note.style.color='#268a63';notify('下载申请已提交')}
+    (function(){
+      const proof=document.querySelector('.proof');
+      if(!proof)return;
+      const strip=document.createElement('section');strip.className='trust-strip';strip.innerHTML='<div class="shell"><div class="trust-top"><strong>GLOBAL SIGNALS</strong><span>远航图谱持续追踪的出海市场信号</span></div><div class="signal-window"><div class="signal-track"><div class="signal-item"><b>150+</b><span>MARKET SIGNALS</span></div><div class="signal-item"><b>7</b><span>CAPABILITY LAYERS</span></div><div class="signal-item"><b>3</b><span>DIAGNOSIS STEPS</span></div><div class="signal-item"><b>90</b><span>DAYS TO LAUNCH</span></div><div class="signal-item"><b>24h</b><span>FIRST RESPONSE</span></div><div class="signal-item"><b>150+</b><span>MARKET SIGNALS</span></div><div class="signal-item"><b>7</b><span>CAPABILITY LAYERS</span></div><div class="signal-item"><b>3</b><span>DIAGNOSIS STEPS</span></div><div class="signal-item"><b>90</b><span>DAYS TO LAUNCH</span></div><div class="signal-item"><b>24h</b><span>FIRST RESPONSE</span></div></div></div></div>';
+      proof.after(strip);
+    })();
   </script>
 </body>
 </html>
